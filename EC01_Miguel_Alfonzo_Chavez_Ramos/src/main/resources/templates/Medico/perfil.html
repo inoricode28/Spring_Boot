@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="es" xmlns="https://www.thymeleaf.org/">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Perfil de Personal Medico</title>
+</head>
+
+<body>
+	<p>ESTAMOS EN LA PAGINA DEL PERSONAL MEDICO</p>
+	<p>ID Medico : <span th:text="${miPersonalMedico.getIdPerMedico()}"></span>.</p>
+	<p>Nombre : <span th:text="${miPersonalMedico.getNombre()}"></span>.</p>
+	<p>Apellido Paterno : <span th:text="${miPersonalMedico.getApPaterno()}"></span>.</p>
+	<p>Apllido Materno : <span th:text="${miPersonalMedico.getApMaterno()}"></span>.</p>
+	<p>Telefono : <span th:text="${miPersonalMedico.getTelefono()}"></span>.</p>
+	<p>Direccion : <span th:text="${miPersonalMedico.getDireccion()}"></span>.</p>
+	<p>Horario: <span th:text="${miPersonalMedico.getHorario()}"></span>.</p>
+	<p>Especialidad : <span th:text="${miPersonalMedico.getEspecialidad()}"></span>.</p>
+	<p>Salario : <span th:text="${miPersonalMedico.getSalario()}"></span>.</p>	
+	<p>Medico Asignado : <span th:text="${miPersonalMedico.getMedAsignado()}"></span>.</p>
+	
+
+</body>
+</html>

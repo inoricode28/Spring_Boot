@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="es" xmlns="https://www.thymeleaf.org/">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Perfil de Personal - Admision</title>
+</head>
+
+<body>
+	<p>ESTAMOS EN LA PAGINA DEL PERSONAL DE ADMISION</p>
+	<p>Codigo : <span th:text="${miPersonAdm.getIdAdmin()}"></span>.</p>
+	<p>Nombre : <span th:text="${miPersonAdm.getNombre()}"></span>.</p>
+	<p>Telefono : <span th:text="${miPersonAdm.getTelefono()}"></span>.</p>
+	<p>Direccion : <span th:text="${miPersonAdm.getDireccion()}"></span>.</p>
+	<p>Apellido Paterno : <span th:text="${miPersonAdm.getApPaterno()}"></span>.</p>
+	<p>Apellido Materno : <span th:text="${miPersonAdm.getApMaterno()}"></span>.</p>
+	<p>Puesto : <span th:text="${miPersonAdm.getPuesto()}"></span>.</p>
+	<p>Horario : <span th:text="${miPersonAdm.getHorario()}"></span>.</p>
+	<p>Salario : <span th:text="${miPersonAdm.getSalario()}"></span>.</p>
+	<p>Registro : <span th:text="${miPersonAdm.getIdRegistro()}"></span>.</p>
+	<p>Examen Medico : <span th:text="${miPersonAdm.getIdExaMed()}"></span>.</p>
+	<p>Paciente : <span th:text="${miPersonAdm.getIdPaciente()}"></span>.</p>
+
+</body>
+
+</html>

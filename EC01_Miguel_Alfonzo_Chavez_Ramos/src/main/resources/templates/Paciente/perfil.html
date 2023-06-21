@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="es" xmlns="https://www.thymeleaf.org/">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Perfil de Paciente</title>
+</head>
+
+<body>
+	<p>ESTAMOS EN LA PAGINA DEL PASIENTE</p>
+	<p>ID Paciente : <span th:text="${miPaciente.getIdPaciente()}"></span>.</p>
+	<p>Nombre : <span th:text="${miPaciente.getNombre()}"></span>.</p>
+	<p>Apellido Paterno : <span th:text="${miPaciente.getApPaterno()}"></span>.</p>
+	<p>Apllido Materno : <span th:text="${miPaciente.getApMaterno()}"></span>.</p>
+	<p>Tipo de Sangre : <span th:text="${miPaciente.getTipSangre()}"></span>.</p>
+	<p>Fecha de Salida : <span th:text="${miPaciente.getFechaSalida()}"></span>.</p>
+	<p>Fecha de Entrada : <span th:text="${miPaciente.getFechaEntrada()}"></span>.</p>
+	<p>Genero : <span th:text="${miPaciente.getGenero()}"></span>.</p>
+	<p>Registro : <span th:text="${miPaciente.getIdRegistro()}"></span>.</p>	
+	<p>Habitacion : <span th:text="${miPaciente.getIdHabitacion()}"></span>.</p>
+	<p>Atencion Paciente : <span th:text="${miPaciente.getAtiPaciente()}"></span>.</p>
+
+</body>
+</html>

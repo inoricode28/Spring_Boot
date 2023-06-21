@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="es" xmlns="https://www.thymeleaf.org/">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Factura</title>
+</head>
+
+<body>
+	<p>ESTAMOS EN LA PAGINA DE FACTURACION</p>
+	<p>Factura : <span th:text="${miFactura.getIdFactura()}"></span>.</p>
+	<p>Cargo : <span th:text="${miFactura.getCargo()}"></span>.</p>
+	<p>Cliente : <span th:text="${miFactura.getCliente()}"></span>.</p>
+	<p>Facturista : <span th:text="${miFactura.getFacturista()}"></span>.</p>
+	<p>Tipo de Pago : <span th:text="${miFactura.getTipoPago()}"></span>.</p>
+	<p>Tipo de Moneda : <span th:text="${miFactura.getTipoMoneda()}"></span>.</p>
+	<p>Empresa : <span th:text="${miFactura.getEmpresa()}"></span>.</p>
+    <p>Fecha de Expiracion : <span th:text="${miFactura.getFechaExp()}"></span>.</p>	
+    <p>Hora de Expiracion : <span th:text="${miFactura.getHrExpe()}"></span>.</p>
+    <p>Estado de factura : <span th:text="${miFactura.getEstadoFac()}"></span>.</p> 
+    
+   
+    
+
+</body>
+</html>
