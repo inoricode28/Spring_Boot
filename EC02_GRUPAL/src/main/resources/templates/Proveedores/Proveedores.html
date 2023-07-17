@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es" xmlns="https://www.thymeleaf.org/">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Registro de Proveedores</title>
+	<link rel="stylesheet" type="text/css" th:href="@{/css/bootstrap/bootstrap.css}" />
+</head>
+
+<body>
+
+	<nav th:replace="layout::menu">
+	</nav>
+
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-12 col-md-12 col-sm-8 container justify-contetnt-center card">
+				<h1 class="text-center">Registro de Proveedores</h1>
+				<div class="card-body">
+					<form th:action="@{/Proveedores}" method="post" th:object="${proveedoresform}">
+
+						<div class=" form-group">
+							<br>
+							<!--Codigo-->
+							<div class="mb-3">
+								<label for="inputcodigo" class="form-label">RUC : </label>
+								<input type="text" name="codRUC" class="form-control" id="inputcodigo"
+									placeholder="Ingrese su codigo" required>
+							</div>
+							<!--NOMBRE DEL PRODUCTO-->
+							<div class="mb-3">
+								<label for="inputnombre" class="form-label">Nombre : </label>
+								<input type="text" name="nombre" class="form-control" id="inputnombre"
+									placeholder="Ingrese su nombre" required>
+							</div>
+							<!--STOCK DEL PRODUCTO-->
+							<div class="mb-3">
+								<label for="inputstock" class="form-label">Direccion :</label>
+								<input type="text" name="Direccion" class="form-control" id="inputstock"
+									placeholder="Ingrese su stock" required>
+							</div>
+
+							<!--PRECIO DEL PRODUCTO-->
+							<div class="mb-3">
+								<label for="inputprecio" class="form-label">Razon :</label>
+								<input type="text" name="Razon" class="form-control" id="inputprecio"
+									placeholder="Ingrese su precio" required>
+							</div>
+							<!--PROVEEDORES-->
+							<div class="mb-3">
+								<label for="inputproveedor" class="form-label">Fecha Facturacion :</label>
+								<input type="text" name="FechFactu" class="form-control" id="inputproveedor"
+									placeholder="Ingrese su proveedor" required>
+							</div>
+						</div>
+				</div>
+
+				<!--BOTON-->
+				<br>
+				<div class="box-footer">
+					<button type="submit" class="btn btn-success">Registrar</button>
+				</div>
+
+				<br>
+				<table class="table">
+					<thead class="table-dark">
+						<th>RUC</th>
+						<th>NOMBRE</th>
+						<th>DIRECCION</th>
+						<th>RAZON</th>
+						<th>FECHA FACTURA</th>
+					</thead>
+					<tbody>
+						<tr th:each="Proveedores : ${lstProvee}">
+							<th th:text="${Proveedores.codRUC}"></th>
+							<th th:text="${Proveedores.nombre}"></th>
+							<th th:text="${Proveedores.Direccion}"></th>
+							<th th:text="${Proveedores.Razon}"></th>
+							<th th:text="${Proveedores.FechFactu}"></th>
+						</tr>
+					</tbody>
+				</table>
+
+				</form>
+			</div>
+		</div>
+	</div>
+	</div>
+
+	<script type=" text/javascript" th:href="@{/script/jquery/jquery.js}"></script>
+	<script type="text/javascript" th:href="@{/script/js/bootstrap.js}"></script>
+</body>
+
+</html>

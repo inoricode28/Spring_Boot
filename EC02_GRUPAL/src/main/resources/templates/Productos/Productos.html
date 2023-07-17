@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es" xmlns="https://www.thymeleaf.org/">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Registro de Productos</title>
+	<link rel="stylesheet" type="text/css" th:href="@{/css/bootstrap/bootstrap.css}" />
+</head>
+
+<body>
+
+	<nav th:replace="layout::menu">
+	</nav>
+
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-12 col-md-12 col-sm-8 container justify-contetnt-center card">
+				<h1 class="text-center">Registro de Productos</h1>
+				<div class="card-body">
+					<form th:action="@{/Productos}" method="post" th:object="${productosform}">
+
+						<div class=" form-group">
+							<br>							
+							<!--NOMBRE DEL PRODUCTO-->
+							<div class="mb-3">
+								<label for="inputnombre" class="form-label">Nombre : </label>
+								<input type="text" name="nombre" class="form-control" id="inputnombre"
+									placeholder="Ingrese su nombre" required>
+							</div>
+							<!--STOCK DEL PRODUCTO-->
+							<div class="mb-3">
+								<label for="inputstock" class="form-label">Stock :</label>
+								<input type="text" name="stock" class="form-control" id="inputstock"
+									placeholder="Ingrese su stock" required>
+							</div>
+
+							<!--PRECIO DEL PRODUCTO-->
+							<div class="mb-3">
+								<label for="inputprecio" class="form-label">Precio :</label>
+								<input type="text" name="precio" class="form-control" id="inputprecio"
+									placeholder="Ingrese su precio" required>
+							</div>
+							<!--PROVEEDORES-->
+							<div class="mb-3">
+								<label for="inputproveedor" class="form-label">Proveedor :</label>
+								<input type="text" name="proveedor" class="form-control" id="inputproveedor"
+									placeholder="Ingrese su proveedor" required>
+							</div>
+						</div>
+				</div>
+
+				<!--BOTON-->
+				<br>
+				<div class="box-footer">
+					<button type="submit" class="btn btn-success">Registrar</button>
+				</div>
+
+				<br>
+				<table class="table">
+					<thead class="table-dark">
+						<th>Codigo</th>
+						<th>Nombre</th>
+						<th>Stock</th>
+						<th>Precio</th>
+						<th>Proveedor</th>
+					</thead>
+					<tbody>
+						<tr th:each="Productos : ${lstProd}">
+							<th th:text="${Productos.codproducto}"></th>
+							<th th:text="${Productos.nombre}"></th>
+							<th th:text="${Productos.stock}"></th>
+							<th th:text="${Productos.precio}"></th>
+							<th th:text="${Productos.proveedor}"></th>
+						</tr>
+					</tbody>
+				</table>
+
+				</form>
+			</div>
+		</div>
+	</div>
+	</div>
+
+	<script type=" text/javascript" th:href="@{/script/jquery/jquery.js}"></script>
+	<script type="text/javascript" th:href="@{/script/js/bootstrap.js}"></script>
+</body>
+
+</html>

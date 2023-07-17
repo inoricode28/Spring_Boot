@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es" xmlns="https://www.thymeleaf.org/">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Registro de Usuarios</title>
+	<link rel="stylesheet" type="text/css" th:href="@{/css/bootstrap/bootstrap.css}" />
+</head>
+
+<body>
+
+	<nav th:replace="layout::menu">
+	</nav>
+	
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-12 col-md-12 col-sm-8 container justify-contetnt-center card">
+				<h1 class="text-center">Registro de Usuarios</h1>
+				<div class="card-body">
+					<form th:action="@{/Usuarios}" method="post" th:object="${usuariosform}">
+					 
+						<div class=" form-group">
+
+						<br>
+						<label>Correo : </label>
+						<input type="email" name="email" class="form-control" placeholder="Ingrese su correo"
+							required>
+
+						<br>
+						<label>Contraseña : </label>
+						<input type="password" name="contrasenia" class="form-control" placeholder="Ingrese su contraseña"
+							required>
+				</div>
+
+				<br>
+				<div class="box-footer">
+					<button type="submit" class="btn btn-success">Registrar</button>
+				</div>
+				
+				<br>
+				<table class="table">
+					<thead class="table-dark">
+						<th>ID</th>
+						<th>Correo</th>
+						<th>Contraseña</th>
+					</thead>
+					<tbody>
+						<tr th:each="usuarios : ${lstUsers}">
+							<th th:text="${usuarios.id}"></th>
+							<th th:text="${usuarios.email}"></th>
+							<th th:text="${usuarios.contrasenia}"></th>	
+						</tr>						
+					</tbody>
+				</table>
+
+				</form>
+				</div>
+			</div>
+		</div>
+	</div>
+
+<script type=" text/javascript" th:href="@{/script/jquery/jquery.js}"></script>
+<script type="text/javascript" th:href="@{/script/js/bootstrap.js}"></script>
+</body>
+
+</html>
