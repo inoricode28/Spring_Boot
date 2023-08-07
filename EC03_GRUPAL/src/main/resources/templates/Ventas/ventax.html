@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<title>Ventas</title>
+	<meta charset=”utf-8” />
+	<link rel="stylesheet" type="text/css" th:href="@{/css/bootstrap/bootstrap.css}" />
+	<script type="text/javascript" th:src="@{/script/jquery/jquery.js}"></script>
+	<script type="text/javascript" th:src="@{/script/js/bootstrap.bundle.js}"></script>
+	<link rel="stylesheet" type="text/css" th:href="@{/css/bootstrap/bootstrap.css}" />
+</head>
+
+<body>
+	<nav th:replace="layout::menu"></nav>
+		 <h4 style="background-color: red;"> Ronald Valdivia </h4>
+		<div class="container text-center">
+		<div class="row">
+			<div class="col-sm"></div>
+			<div class="col-lg">
+				<div class="card">
+					<div class="card-header text-bg-danger text-center">
+						VENTAS
+					</div>
+					<div class="card-body">
+						
+							<div class="mb-3">
+								<label for="exampleInputEmail1" class="form-label">ID CLIENTE</label>
+								<input type="text" name="ID" class="form-control" id="exampleInputEmail1">
+							</div>
+							<div class="mb-3">
+								<label for="exampleInputPassword1" class="form-label">CODIGO</label>
+								<input type="text" name="Codigo" class="form-control" id="exampleInputPassword1">
+							</div>
+							<div class="mb-3">
+								<label for="exampleInputPassword1" class="form-label">PRODUCTO</label>
+								<input type="text" name="Producto" class="form-control" id="exampleInputPassword1">
+							</div>
+							<div class="mb-3">
+								<label for="exampleInputPassword1" class="form-label">PRECIO UNITARIO</label>
+								<input type="text" name="PrecioU" class="form-control" id="exampleInputPassword1">
+							</div>
+							<div class="mb-3">
+								<label for="exampleInputPassword1" class="form-label">CANTIDAD</label>
+								<input type="text" name="Cant" class="form-control" id="exampleInputPassword1">
+							</div>
+							<div th:if="${visual}" class="alert alert-danger" role="alert">
+								<span th:text="${R}?:''"></span>
+							</div>
+							<button type="submit" class="btn btn-danger">TOTAL</button>
+						</form>
+					</div>
+				</div>
+			</div>
+			<div class="col-sm"></div>
+		</div>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<table class="table table-striped table-dark">
+	<h2 class="bg-dark text-light p-2"> <center>Lista Ventas</center></h2>
+	<h4 class="bg-dark text-light p-2"> Ronald Valdivia </h4>
+		<thead>
+			<tr>
+				<th scope="col">ID_Cliente</th>
+				<th scope="col">Codigo</th>
+				<th scope="col">Producto</th>
+				<th scope="col">Precio Unitario</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr th:each="vent : ${ls}">
+				 <td th:text="${vent.ID_Cliente}"></td>
+				 <td th:text="${vent.Codigo}"></td>
+				 <td th:text="${vent.Producto}"></td>
+				 <td th:text="${vent.PrecioUnitario}"></td>
+			</tr>
+		</tbody>
+	</table>	
+</body>
+
+</html>

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es" xmlns="https://www.thymeleaf.org/">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Registro de Cliente</title>
+	<link rel="stylesheet" type="text/css" th:href="@{/css/bootstrap/bootstrap.css}" />
+</head>
+
+<body>
+
+	<nav th:replace="layout::menu">
+	</nav>
+
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-24 col-md-24 col-sm-16 container justify-contetnt-center card">
+				<h1 class="text-center">Registro de Clientes</h1>
+				<h2 class="text-left">Por: Daniel Nestares Silva</h2>
+				<div class="card-body">
+					<form th:action="@{/}" method="post" th:object="${cliente}">
+
+						<div class=" form-group">
+							<br>
+														
+							<!--Nombre-->
+							<div class="mb-3">
+								<label for="inputstock" class="form-label">Nombre :</label>
+								<input type="text" name="Nombre" class="form-control" id="inputstock"
+									placeholder="Ingrese su nombre" required>
+							</div>
+
+							<!--Telefono-->
+							<div class="mb-3">
+								<label for="inputprecio" class="form-label">Telefono :</label>
+								<input type="text" name="Telefono" class="form-control" id="inputprecio"
+									placeholder="Ingrese su telefono" required>
+							</div>
+							<!--Direccion-->
+							<div class="mb-3">
+								<label for="inputproveedor" class="form-label">Direccion :</label>
+								<input type="text" name="Direccion" class="form-control" id="inputproveedor"
+									placeholder="Ingrese su direccion" required>
+							</div>
+							
+							<!--Razon-->
+							<div class="mb-3">
+								<label for="inputRazon" class="form-label">Razon :</label>
+								<input type="text" name="Razon" class="form-control" id="inputRazon"
+									placeholder="Ingrese su razon" required>													
+						</div>
+				</div>
+
+				<!--BOTON-->
+				<br>
+				<div class="box-footer">
+					<button type="submit" class="btn btn-success">Registrar</button>
+				</div>
+
+				<br>
+				<table class="table">
+					<thead class="table-dark">
+						<th>ID</th>										
+						<th>NOMBRE</th>
+						<th>TElEFONO</th>
+						<th>DIRECCION</th>
+						<th>RAZON</th>
+						
+						
+						
+					</thead>
+					<tbody>
+						<tr th:each="Cliente : ${cliente}">
+							<th th:text="${Cliente.codID}"></th>							
+							<th th:text="${Cliente.nombre}"></th>
+							<th th:text="${Cliente.telefono}"></th>
+							<th th:text="${Cliente.direccion}"></th>
+							<th th:text="${Cliente.razon}"></th>
+														
+							
+						</tr>						
+					</tbody>
+				</table>
+				</form>
+			</div>
+		</div>
+	</div>
+	</div>
+
+	<script type=" text/javascript" th:href="@{/script/jquery/jquery.js}"></script>
+	<script type="text/javascript" th:href="@{/script/js/bootstrap.js}"></script>
+</body>
+
+</html>

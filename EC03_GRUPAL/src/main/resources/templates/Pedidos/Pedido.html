@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="es" xmlns="https://www.thymeleaf.org/">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Registro de Pedido</title>
+	<link rel="stylesheet" type="text/css" th:href="@{/css/bootstrap/bootstrap.css}" />
+	<link rel="stylesheet" type="text/css" th:href="@{/css/styles.css}" />	
+</head>
+
+<body>
+
+	
+
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-24 col-md-24 col-sm-16 container justify-contetnt-center card">
+				<h1 class="text-center">Registro de Pedidos</h1>
+				<div class="card-body">
+					<form th:action="@{/Pedido}" method="post" th:object="${pedidoform}">
+
+						<div class=" form-group">
+							<br>
+														
+							<!--Nombre-->
+							<div class="mb-3">
+								<label for="inputtelefono" class="form-label">Contacto Telefónico :</label>
+								<input type="text" name="TelefonoCliente" class="form-control" id="inputtelefono"
+									placeholder="Ingrese el telefono del cliente" required>
+							</div>
+
+							<!--Telefono-->
+							<div class="mb-3">
+								<label for="inputnombrec" class="form-label">Nombre del Cliente :</label>
+								<input type="text" name="NombreCliente" class="form-control" id="inputnombrec"
+									placeholder="Ingrese el nombre del cliente" required>
+							</div>
+							<!--Direccion-->
+							<div class="mb-3">
+								<label for="inputdni" class="form-label">DNI :</label>
+								<input type="text" name="DNI" class="form-control" id="inputdni"
+									placeholder="Ingrese el dni del cliente" required>
+							</div>
+							
+							<!--Razon-->
+							<div class="mb-3">
+								<label for="inputdireccion" class="form-label">Dirección :</label>
+								<input type="text" name="Direccion" class="form-control" id="inputdireccion"
+									placeholder="Ingrese la dirección de entrega" required>													
+							</div>
+						<!--Razon-->
+							<div class="mb-3">
+								<label for="inputfecha" class="form-label">Fecha :</label>
+								<input type="text" name="FechaEntrega" class="form-control" id="inputfecha"
+									placeholder="Ingrese la fecha de entrega" required>
+							</div>												
+						
+				</div>
+
+				<!--BOTON-->
+				<br>
+				<div class="box-footer">
+					<button type="submit" class="btn btn-success">Registrar Pedido</button>
+				</div>
+
+				<br>
+				<table class="table">
+					<thead class="table-dark">
+						<th>ID</th>										
+						<th>TELEFONO</th>
+						<th>NOMBRE</th>
+						<th>DNI</th>
+						<th>DIRECCION</th>
+						<th>FECHA</th>
+						
+						
+						
+						
+					</thead>
+					<tbody>
+						<tr th:each="Pedido : ${lstpedido}">
+							<th th:text="${Pedido.Id}"></th>							
+							<th th:text="${Pedido.TelefonoCliente}"></th>	
+							<th th:text="${Pedido.NombreCliente}"></th>	
+							<th th:text="${Pedido.DNI}"></th>	
+							<th th:text="${Pedido.Direccion}"></th>	
+							<th th:text="${Pedido.FechaEntrega}"></th>	
+														
+							
+						</tr>						
+					</tbody>
+				</table>
+				</form>
+			</div>
+		</div>
+	</div>
+	</div>
+
+	<script type=" text/javascript" th:href="@{/script/jquery/jquery.js}"></script>
+	<script type="text/javascript" th:href="@{/script/js/bootstrap.js}"></script>
+</body>
+
+</html>

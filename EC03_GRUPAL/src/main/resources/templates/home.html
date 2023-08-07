@@ -1,0 +1,36 @@
+<!doctype html>
+
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="layout::head" >
+    <title></title>
+</head>
+<body>
+    <nav th:replace="layout::menu">		
+	</nav>    
+	
+    <div class="container text-center">
+        <div class="row">
+            <div class="col-sm-24">
+            </div>
+            <div class="col-lg">
+                <div class="card">                    
+                    <div class="card-body">
+                        <form th:action="@{/login}" method="post" th:object="${loginform}">
+                            <div class="lg-12">			                                
+							
+								<img src="/img/Spring.png" alt="Imagen" class="img-fluid">
+								<img src="/img/MSCOMPUTERS_BD.png" alt="Imagen" class="img-fluid">
+								
+                                								
+                            </div>                            
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-24">
+            </div>
+        </div>
+    </div>
+	
+</body>
+</html>
